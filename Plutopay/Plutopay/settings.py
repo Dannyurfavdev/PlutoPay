@@ -33,6 +33,9 @@ ALLOWED_HOSTS = ['*']
 
 #ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
+VT_API_KEY = config("VT_API_KEY")
+VT_SECRET_KEY = config("VT_SECRET_KEY")
+
 
 # Application definition
 

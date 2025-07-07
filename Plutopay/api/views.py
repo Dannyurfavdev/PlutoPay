@@ -374,7 +374,7 @@ def sell_crypto(request):
         return Response({'message': 'Post call is working fine'}, status=status.HTTP_200_OK)
     else:
         return Response({'error': 'Only Post call is allowed'}, status=status.HTTP_400_BAD_REQUEST)
-'''
+
 
 
 @api_view(['POST'])
@@ -397,6 +397,7 @@ def sell_crypto_status(request):
     else:
         return Response({'error': 'Invalid request method'}, status=status.HTTP_400_BAD_REQUEST)
 
+'''
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
@@ -741,7 +742,7 @@ def cable_tv(request):
             username= 'bigtchub@gmail.com'
             password= 'derico12345'
             #headers = get_basic_auth_header(username, password)
-            headers={'api-key': 'e92c761975af7a8ba37f1cbb6698ffd2','secret-key':'SK_849b33829800f30862b2c899ef9c887c17f24aabb4e', 'Content-Type': 'application/json'}
+            headers={'api-key': settings.VT_API_KEY,'secret-key':settings.VT_SECRET_KEY, 'Content-Type': 'application/json'}
             response = requests.request('POST', url, headers=headers, data=payload)
             print(response.json())
             res= response.json()
@@ -789,7 +790,7 @@ def buy_cable_tv(request):
                     "subscription_type":subscription_type,
                     "quantity": quantity
                 })
-                headers={'api-key': 'e92c761975af7a8ba37f1cbb6698ffd2','secret-key':'SK_849b33829800f30862b2c899ef9c887c17f24aabb4e', 'Content-Type': 'application/json'}
+                headers={'api-key': settings.VT_API_KEY,'secret-key':settings.VT_SECRET_KEY, 'Content-Type': 'application/json'}
                 response= requests.request('POST', url, headers=headers, data=payload)
                 print(response.json())
                 res= response.json()
@@ -864,7 +865,7 @@ def renew_cable_tv(request):
                     "phone":phone,
                     "subscription_type":subscription_type,
                 })
-                headers={'api-key': 'e92c761975af7a8ba37f1cbb6698ffd2','secret-key':'SK_849b33829800f30862b2c899ef9c887c17f24aabb4e', 'Content-Type': 'application/json'}
+                headers={'api-key': settings.VT_API_KEY,'secret-key':settings.VT_SECRET_KEY, 'Content-Type': 'application/json'}
                 response= requests.request('POST', url, headers=headers, data=payload)
                 print(response.json())
                 #Process Purchase
@@ -974,7 +975,7 @@ def verify_meter(request):
                 "serviceID": serviceID,
                 "type": meterType,
             })
-            headers={'api-key': 'e92c761975af7a8ba37f1cbb6698ffd2','secret-key':'SK_849b33829800f30862b2c899ef9c887c17f24aabb4e', 'Content-Type': 'application/json'}
+            headers={'api-key': settings.VT_API_KEY,'secret-key':settings.VT_SECRET_KEY, 'Content-Type': 'application/json'}
             response= requests.request('POST', url, headers=headers, data=payload)
             print(response.json())
             res= response.json()
@@ -1015,7 +1016,7 @@ def buy_electricity(request):
                     "amount":amount,
                     "phone":phone,
                 })
-                headers={'api-key': 'e92c761975af7a8ba37f1cbb6698ffd2','secret-key':'SK_849b33829800f30862b2c899ef9c887c17f24aabb4e', 'Content-Type': 'application/json'}
+                headers={'api-key': settings.VT_API_KEY,'secret-key':settings.VT_SECRET_KEY, 'Content-Type': 'application/json'}
                 response= requests.request('POST', url, headers=headers, data=payload)
                 res= response.json()
                 print(response.json())
@@ -1051,7 +1052,7 @@ def buy_electricity(request):
                     "amount":amount,
                     "phone":phone,
                 })
-                headers={'api-key': 'e92c761975af7a8ba37f1cbb6698ffd2','secret-key':'SK_849b33829800f30862b2c899ef9c887c17f24aabb4e', 'Content-Type': 'application/json'}
+                headers={'api-key': settings.VT_API_KEY,'secret-key':settings.VT_SECRET_KEY, 'Content-Type': 'application/json'}
                 response= requests.request('POST', url, headers=headers, data=payload)
                 res= response.json()
                 print(res)
@@ -1130,7 +1131,7 @@ def buy_data(request):
                     "variation_code": variation_code,
                     "phone":phone
                 })
-                headers={'api-key': 'e92c761975af7a8ba37f1cbb6698ffd2','secret-key':'SK_849b33829800f30862b2c899ef9c887c17f24aabb4e', 'Content-Type': 'application/json'}
+                headers={'api-key': settings.VT_API_KEY,'secret-key':settings.VT_SECRET_KEY, 'Content-Type': 'application/json'}
                 response= requests.request('POST', url, headers=headers, data=payload)
                 print(response.json())
                 res= response.json()
@@ -1195,7 +1196,7 @@ def buy_airtime(request):
                     "phone": phone,
                     "amount": amount,
                 })
-                headers={'api-key': 'e92c761975af7a8ba37f1cbb6698ffd2','secret-key':'SK_849b33829800f30862b2c899ef9c887c17f24aabb4e', 'Content-Type': 'application/json'}
+                headers={'api-key': settings.VT_API_KEY,'secret-key':settings.VT_SECRET_KEY, 'Content-Type': 'application/json'}
                 response= requests.request('POST', url, headers=headers, data=payload)
                 res= response.json()
                 if res['code'] == '000':
