@@ -25,9 +25,9 @@
 
 ## 📸 Screenshots
 
-> Coming soon
+<img width="371" height="797" alt="Screenshot 2025-07-07 at 8 23 47 AM" src="https://github.com/user-attachments/assets/ce6d46f0-ff89-49e3-83c5-c652297c979b" />
 
----
+
 
 ## 🚀 Getting Started
 
